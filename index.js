@@ -1,8 +1,10 @@
 import './modules/addBook.js' ; // Module is evaluated!
 import  addBook  from './modules/addBook.js';
+import  displayBooks  from './modules/display.js';
+import selection  from './modules/navigation.js';
 
 
-const booksSection = document.getElementById('books-list');
+// const booksSection = document.getElementById('books-list');
 const timeDate = document.getElementById('date');
 const sectionOfBooks = document.querySelector('#books-section');
 const sectionContact = document.querySelector('#section-contact');
@@ -24,22 +26,20 @@ export class Books {
     }
 
     // displaybooks
-    static displayBooks() {
-        Books.timeDisplay()
-        booksList.forEach((book, i) => {
-            booksSection.innerHTML += `<div class="book-detail" id="book-detail">
-      <div class="one-book">
-          <span class="book-title">"${book.title}"</span>
-          <span>by</span>
-          <span class="book-author">${book.author}</span>
-      </div>
-          <button type="button" onclick="Books.removeBook(${i})" class="remove-btn" id="remove-btn">Remove</button>
-      </div>`;
-        });
-    }
+    static displayBookss() { Books.timeDisplay(); displayBooks()}
+    //     booksList.forEach((book, i) => {
+    //         booksSection.innerHTML += `<div class="book-detail" id="book-detail">
+    //   <div class="one-book">
+    //       <span class="book-title">"${book.title}"</span>
+    //       <span>by</span>
+    //       <span class="book-author">${book.author}</span>
+    //   </div>
+    //       <button type="button" onclick="Books.removeBook(${i})" class="remove-btn">Remove</button>
+    //   </div>`;
+    //     });
+    // }
     // addbook
-    static addBookk() {
-        addBook();
+    static addBooks() {       addBook();}
         // const book = new Books(inputTitle.value, inputAuthor.value);
         // if (inputTitle.value !== '' && inputAuthor.value !== '') {
         //     booksList.push(book);
@@ -48,14 +48,14 @@ export class Books {
         // } else {
         //     errorMesg.classList.add('active');
         // }
-    }
+    
     // removebook
 
-    static removeBook(index) {
+    removeBook(index) {
         booksList.splice(index, 1);
         booksSection.innerHTML = '';
         localStorage.setItem('coward', JSON.stringify(booksList));
-        Books.displayBooks();
+        Books.displayBookss();
     }
 
     //Display Date and Time
@@ -67,32 +67,15 @@ export class Books {
     }
 }
 
-window.onload = Books.displayBooks();
+window.onload = Books.displayBookss();
 setInterval(Books.timeDisplay, 1000);
 addBtn.addEventListener('click', () => {
     booksSection.innerHTML = '';
-    Books.addBookk();
+    Books.addBook();
     // inputTitle.value = '';
     // inputAuthor.value = '';
 });
 
 // navigation
 
-links.forEach((link) => {
-    link.addEventListener('click', (e) => {
-        console.log(e.target.id);
-        if (e.target.id === 'list') {
-            sectionOfBooks.classList.add('showing');
-            sectionContact.classList.remove('showing');
-            sectionForm.classList.remove('showing');
-        } else if (e.target.id === 'add') {
-            sectionOfBooks.classList.remove('showing');
-            sectionContact.classList.remove('showing');
-            sectionForm.classList.add('showing');
-        } else if (e.target.id === 'contact') {
-            sectionOfBooks.classList.remove('showing');
-            sectionContact.classList.add('showing');
-            sectionForm.classList.remove('showing');
-        }
-    });
-});
+links.forEach((link) => { link.addEventListener('click', e => selection(e.target.id));})
