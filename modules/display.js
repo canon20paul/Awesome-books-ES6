@@ -1,8 +1,9 @@
+
 import { booksList } from '/index.js'; // Module is evaluated!
 
 const booksSection = document.getElementById('books-list');
-
   export default function displayBooks() {
+      booksSection.innerHTML = ''
     // Books.timeDisplay()
     booksList.forEach((book, i) => {
         booksSection.innerHTML += `<div class="book-detail" id="book-detail">
@@ -11,7 +12,7 @@ const booksSection = document.getElementById('books-list');
           <span>by</span>
           <span class="book-author">${book.author}</span>
       </div>
-          <button type="button" onclick="Books.removeBook(${i})" class="remove-btn">Remove</button>
+          <button type="button" class="remove-btn" id="${i}">Remove</button>
       </div>`;
-    });
+     });   
 }

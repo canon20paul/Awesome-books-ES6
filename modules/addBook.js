@@ -1,5 +1,6 @@
-import {Books} from '/index.js'; // Module is evaluated!
-import {booksList} from '/index.js'; // Module is evaluated!
+import displayBooks from './display.js';
+import {Books} from '/index.js'; 
+import {booksList} from '/index.js'; 
 
 const inputTitle = document.getElementById('title');
 const inputAuthor = document.getElementById('author');
@@ -16,4 +17,5 @@ const errorMesg = document.querySelector('.error-mesg');
     } else {
         errorMesg.classList.add('active');
     }
+    displayBooks();
 }
