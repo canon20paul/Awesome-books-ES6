@@ -6,7 +6,7 @@ const inputTitle = document.getElementById('title');
 const inputAuthor = document.getElementById('author');
 const errorMesg = document.querySelector('.error-mesg');
 
-  export default function addBook() {
+  const addBook= () => {
         if (inputTitle.value !== '' && inputAuthor.value !== '') {
         const book = new Books(inputTitle.value, inputAuthor.value);
         booksList.push(book);
@@ -19,3 +19,4 @@ const errorMesg = document.querySelector('.error-mesg');
     }
     displayBooks();
 }
+export default addBook;

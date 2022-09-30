@@ -2,7 +2,7 @@
 import { booksList } from '/index.js'; // Module is evaluated!
 
 const booksSection = document.getElementById('books-list');
-export default function displayBooks() {
+const displayBooks = () => {
   booksSection.innerHTML = ''
   // Books.timeDisplay()
   booksList.forEach((book, i) => {
@@ -16,3 +16,4 @@ export default function displayBooks() {
       </div>`;
   });
 }
+export default displayBooks;

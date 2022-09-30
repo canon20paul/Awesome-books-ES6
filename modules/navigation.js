@@ -3,7 +3,7 @@ const sectionOfBooks = document.querySelector('#books-section');
 const sectionContact = document.querySelector('#section-contact');
 const sectionForm = document.querySelector('#form-section');
 
-export default function selection(id) {
+const selection = (id) => {
     if (id === 'list') {
         sectionOfBooks.classList.add('showing');
         sectionContact.classList.remove('showing');
@@ -18,3 +18,4 @@ export default function selection(id) {
         sectionForm.classList.remove('showing');
     }
 }
+export default selection
