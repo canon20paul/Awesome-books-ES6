@@ -3,7 +3,7 @@
 
 # Awesome Books ES6
 
-> First Project Mearnt to demonstrate a Personal Portofolio
+> Awesome Books is a simple Books managment app that can best fit a library in which a user can add and remove books. the webpage will show the user current books in local storage.built with vanilla JavaScript
 ## Built With
 
 - Html
@@ -14,7 +14,9 @@
 
 ## Live Demo (if available)
 
-[Live Demo Link]()
+[Live Demo Link]( https://canon20paul.github.io/Awesome-books-ES6)
+
+[Source]( https://github.com/canon20paul/Awesome-books-ES6)
 
 
 ## Getting Started
