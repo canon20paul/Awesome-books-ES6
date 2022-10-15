@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Awesome-books ES6",
   "main": "index.js",
+  "eslintIgnore": ["luxon.js"],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

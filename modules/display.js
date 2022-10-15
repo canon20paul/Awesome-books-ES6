@@ -1,9 +1,7 @@
-
-import { booksList } from '/index.js'; // Module is evaluated!
-
-const booksSection = document.getElementById('books-list');
-const displayBooks = () => {
-  booksSection.innerHTML = ''
+export const displayBooks = () => {
+  const booksSection = document.getElementById('books-list');
+  const booksList = JSON.parse(localStorage.getItem('coward')) || [];
+  booksSection.innerHTML = '';
   // Books.timeDisplay()
   booksList.forEach((book, i) => {
     booksSection.innerHTML += `<div class="book-detail" id="book-detail">
@@ -15,5 +13,5 @@ const displayBooks = () => {
           <button type="button" class="remove-btn" id="${i}">Remove</button>
       </div>`;
   });
-}
-export default displayBooks;
+};
+// export default displayBooks ;
